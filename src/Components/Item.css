@@ -1,0 +1,12 @@
+.expense{
+    border-right: 5px solid red;
+}
+.income{
+    border-right: 5px solid #cccc71;
+}
+.redFont{
+    color : red;
+}
+.greenFont{
+    color : #cccc71;
+}
