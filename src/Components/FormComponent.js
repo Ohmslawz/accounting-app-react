@@ -1,8 +1,8 @@
+
 import './FormComponent.css'
 import {useState} from 'react' //นำ useState มาใช้
-import { v4 as uuidv4 } from 'uuid'; //import มาเพื่อสร้าง unique id
 
-const FormComponent = (props) =>{
+const FormComponent = () =>{
     const [title,setTitle] = useState('') //ใส่ค่าเริ่มต้นเป็นค่าว่าง
     const [amount,setAmount] = useState(0) //ใส่ค่าเริ่มต้นเป็นเลข 0
 
@@ -15,11 +15,10 @@ const FormComponent = (props) =>{
     const saveItem =(event)=>{
         event.preventDefault();//ใช้ในการเซตให้เมื่อบันทึกข้อมูลแล้วไม่เซตเป็นค่าว่าง
         const itemData = { //สร้าง object ขึ้นมาเพื่อเก็บค่า state title และ amount เป็นก้อนเดียวกัน
-            id:uuidv4(),
             title:title,
             amount:Number(amount) //ค่าที่รับมาใน object เป็น string จึงต้องใส่ number เพื่อแปลงค่าเป็นตัวเลข เพราะเรากำหนดใน item.js ว่าค่าที่รับมาต้องเป็นตัวเลขก่อนจะนำไปแสดงค่าที่เบราเซอร์
         }
-        props.onAddItem(itemData) //สร้าง props เพื่อส่งตัวแปร itemData ซึ่งเป็น object ที่เก็บข้อมูล title and amount ไปที่ app.js
+        console.log(itemData)
         setTitle('') //ใส่เพื่อให้set ค่าใน state title เป็นค่าว่างหลังจากกดเพิ่มข้อมูล
         setAmount('')
     }
@@ -41,5 +40,4 @@ const FormComponent = (props) =>{
         </div>
     )
 }
-
 export default FormComponent
