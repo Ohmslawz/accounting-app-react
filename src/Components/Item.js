@@ -6,8 +6,11 @@ const Item=(props)=>{
     const status = amount<0 ?"expense":"income" //สร้าง class ขึ้นมาเพื่อสร้างเงื่อนไขว่า ถ้า input ที่รับมาเป็นรายได้หรือรายจ่าย เพื่อนำไปใช้ในการตกแต่งต่อไป
     const symbol = amount<0 ?"-":"+"
     const amountColor = amount<0 ?"redFont":"greenFont"
+    const formatNumber=(num)=>{
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') //ฟังก์ชันที่ใช้ในการใส่ลูกน้ำให้กับตัวเลขเงิน
+    }
     return (
-        <li className={status}>{title} <span className={amountColor}> {symbol}{Math.abs(amount)} บาท</span></li>
+        <li className={status}>{title} <span className={amountColor}> {symbol}{formatNumber(Math.abs(amount))} บาท</span></li>
     );
 }
 Item.propTypes={

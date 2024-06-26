@@ -20,3 +20,27 @@ body{
   margin: 30px auto;
   width: 350px;
 }
+.button{
+  text-align: center;
+}
+.button-in{
+  background-color: darkcyan;
+  color: white;
+}
+.horizontal-menu{
+  list-style-type: none;
+  display:flex;
+  justify-content: space-between;
+  padding-left:65px;
+  padding-right:65px;
+  overflow: hidden;
+}
+.libtn{
+  background-color: darkcyan;
+  padding: 7px 10px;
+  border-radius: 20px;
+}
+.horizontal-menu a{
+  text-decoration: none;
+  color:white
+}
